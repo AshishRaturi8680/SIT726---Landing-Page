@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DeakinMates - Your Ultimate Campus Companion</title>
+    <title>DeakinMates - Finding Mates, Sharing Fates</title>
     <style>
-        /* General Styles */
+        /* Updated Color Scheme */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -14,10 +14,30 @@
             color: #333;
         }
 
+        /* New Color Scheme */
+        header, footer {
+            background-color: #00ACC1; /* Teal */
+            color: white;
+        }
+
+        .cta-button {
+            background-color: #FF4EC6; /* Pink */
+            color: white;
+        }
+
+        .benefit-item h4, section h3 {
+            color: #40E0D0; /* Turquoise */
+        }
+
+        /* New Slogan */
+        h1 {
+            font-size: 2.5rem;
+            font-family: 'Poppins', sans-serif;
+            text-transform: uppercase;
+        }
+
         /* Header Styles */
         header {
-            background-color: #00558c;
-            color: white;
             padding: 1rem 0;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -31,68 +51,85 @@
             margin: auto;
         }
 
-        h1 {
-            font-size: 2rem;
-            margin: 0;
-        }
-
         .student-details p {
             margin: 0;
         }
 
-        /* Navigation Bar */
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+        nav {
+    width: 100%; /* Make navbar span the full width of the screen */
+    background-color: #00558c; /* Keep or adjust the background color as needed */
+}
 
-        nav ul li {
-            margin-left: 1.5rem;
-        }
+nav ul {
+    display: flex;
+    justify-content: space-between; /* Spread out the nav items evenly */
+    list-style: none;
+    padding: 1rem; /* Add some padding for spacing */
+    margin: 0;
+    max-width: 1200px; /* Optional: Set a max width for the content */
+    margin: 0 auto; /* Center the content inside the navbar */
+}
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s ease;
-        }
+nav ul li {
+    margin-left: 1.5rem;
+}
 
-        nav ul li a:hover {
-            color: #ffcc00;
-        }
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
 
         /* Hero Section */
         .hero {
-            background-image: url('hero-image.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 80vh;
-            color: white;
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 0 1rem;
-        }
+    position: relative;
+    height: 80vh;
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 1rem;
+    overflow: hidden; /* Ensure background stays contained */
+}
 
-        .hero h2 {
-            font-size: 3rem;
-            margin: 0;
-            animation: fadeIn 2s;
-        }
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('JPG.jpg'); /* Background image */
+    background-size: cover;
+    background-position: center;
+    filter: blur(1px); /* Apply the blur effect */
+    z-index: -1; /* Ensure the background stays behind the text */
+}
 
-        .hero p {
-            font-size: 1.2rem;
-            margin-top: 1rem;
-            animation: fadeIn 2.5s;
-        }
+.hero h2, .hero p {
+    position: relative;
+    z-index: 1; /* Ensure the text stays above the blurred background */
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
 
         .cta-button {
-            background-color: #ffcc00;
-            color: #00558c;
             padding: 1rem 2rem;
             font-size: 1.1rem;
             font-weight: bold;
@@ -104,7 +141,7 @@
         }
 
         .cta-button:hover {
-            background-color: #ffb300;
+            background-color: #FFB300;
             transform: scale(1.05);
         }
 
@@ -116,7 +153,6 @@
         section h3 {
             text-align: center;
             font-size: 2.5rem;
-            color: #00558c;
             margin-bottom: 2rem;
         }
 
@@ -163,7 +199,6 @@
 
         .benefit-item h4 {
             font-size: 1.5rem;
-            color: #00558c;
         }
 
         .benefit-item p {
@@ -225,7 +260,7 @@
             display: block;
         }
 
-        /* Social Proof */
+        /* Social Media */
         .social-media {
             display: flex;
             justify-content: center;
@@ -235,18 +270,16 @@
         .social-media a {
             font-size: 2rem;
             margin: 0 0.5rem;
-            color: #00558c;
+            color: #40E0D0;
             transition: color 0.3s ease;
         }
 
         .social-media a:hover {
-            color: #ffcc00;
+            color: #FF4EC6;
         }
 
         /* Footer Section */
         footer {
-            background-color: #00558c;
-            color: white;
             text-align: center;
             padding: 2rem 0;
         }
@@ -262,7 +295,7 @@
         }
 
         footer a:hover {
-            color: #ffcc00;
+            color: #FF4EC6;
         }
 
         /* Media Queries */
@@ -280,12 +313,6 @@
             }
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
@@ -295,8 +322,9 @@
     <header>
         <div class="top-bar">
             <h1>DeakinMates</h1>
+            <p>Finding Mates, Sharing Fates</p>
             <div class="student-details">
-                <p>Ashish (s224637578)</p>
+                <p>Ashish Raturi (s224637578)</p>
                 <p><a href="mailto:s224637578@deakin.edu.au">s224637578@deakin.edu.au</a></p>
             </div>
         </div>
@@ -314,21 +342,21 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <h2>Transform Your Deakin Experience</h2>
-        <p>Connect, Collaborate, and Thrive in the Deakin Community</p>
-        <a href="#" class="cta-button">Download DeakinMates Now</a>
+        <h2>Transform Your Deakin Experience</h2><br>
+        Connect, Collaborate, and Thrive in the Deakin Community
+        <a href="#" class="cta-button">Join the Community</a>
     </section>
 
     <!-- Benefits Section -->
     <section class="benefits" id="benefits">
         <h3>Why Choose DeakinMates?</h3>
-        <p>DeakinMates is designed to make your university experience smoother and more enjoyable by offering a wide range of features tailored to your academic and social needs.</p>
+        <p>DeakinMates helps students from diverse backgrounds and campuses build meaningful connections with peers, mentors, and alumni.</p>
         <div class="container">
             <div class="benefit-item">
                 <img src="networking.jpg" alt="Networking">
                 <div>
-                    <h4>💬 Connect with Peers</h4>
-                    <p>Easily find and network with like-minded students across all Deakin campuses through personalized profiles and interest-based matches.</p>
+                    <h4>💬 Inclusive Community</h4>
+                    <p>Our platform is designed for all students, including those with disabilities, to connect and thrive.</p>
                 </div>
             </div>
             <div class="benefit-item">
@@ -338,34 +366,7 @@
                     <p>Never miss out on important campus events, workshops, and social gatherings. Get real-time updates and RSVP to events with a single tap.</p>
                 </div>
             </div>
-            <div class="benefit-item">
-                <img src="navigation.jpg" alt="Navigation">
-                <div>
-                    <h4>🗺️ Navigate Campuses with Ease</h4>
-                    <p>Access smart navigation tools that help you explore Deakin campuses and the surrounding city.</p>
-                </div>
-            </div>
-            <div class="benefit-item">
-                <img src="marketplace.jpg" alt="Marketplace">
-                <div>
-                    <h4>🛒 Access a Trusted Marketplace</h4>
-                    <p>Buy, sell, or donate items within the Deakin community through a secure platform.</p>
-                </div>
-            </div>
-            <div class="benefit-item">
-                <img src="study-group.jpg" alt="Study Groups">
-                <div>
-                    <h4>👥 Join Study Groups</h4>
-                    <p>Create or join study groups for your courses and collaborate on projects.</p>
-                </div>
-            </div>
-            <div class="benefit-item">
-                <img src="events-recommendation.jpg" alt="Event Recommendations">
-                <div>
-                    <h4>🌟 Get Personalized Event Recommendations</h4>
-                    <p>Receive event suggestions based on your interests and academic program.</p>
-                </div>
-            </div>
+            <!-- Additional benefits as needed -->
         </div>
     </section>
 
@@ -381,27 +382,6 @@
                 <h4>👥 Study Group Formation</h4>
                 <p>Create or join study groups for your courses, collaborate on projects, and share resources.</p>
             </div>
-            <div class="feature-item">
-                <h4>📚 Academic Integration</h4>
-                <p>Access your class timetables and receive personalized course recommendations based on your interests.</p>
-            </div>
-            <div class="feature-item">
-                <h4>🌟 Personalized Event Recommendations</h4>
-                <p>Discover events and activities tailored to your interests and academic program.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof Section -->
-    <section class="social-proof" id="social-proof">
-        <h3>Join Our Community</h3>
-        <p>Follow us on social media and be part of the DeakinMates community.</p>
-        <div class="social-media">
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-twitter-square"></i></a>
-            <a href="#"><i class="fab fa-linkedin"></i></a>
-            <a href="#"><i class="fab fa-youtube-square"></i></a>
         </div>
     </section>
 
@@ -417,10 +397,6 @@
                 <p>"The study group feature is a game-changer. It's so easy to connect with classmates and collaborate on assignments."</p>
                 <strong>- Michael L., Engineering Student</strong>
             </div>
-            <div class="testimonial">
-                <p>"The marketplace helped me find affordable textbooks and furniture. It's a must-have app for every Deakin student!"</p>
-                <strong>- Emily R., Arts Student</strong>
-            </div>
         </div>
     </section>
 
@@ -435,10 +411,6 @@
             <div class="faq-item">
                 <h4>How do I verify my Deakin student status?</h4>
                 <p>Simply sign up with your Deakin email address and follow the verification process within the app.</p>
-            </div>
-            <div class="faq-item">
-                <h4>Can alumni use DeakinMates?</h4>
-                <p>Yes, Deakin alumni can access certain features of the app to stay connected with the Deakin community.</p>
             </div>
         </div>
     </section>
