@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,234 +7,299 @@
     <style>
         /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f9f9f9;
             color: #333;
         }
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+
         /* Header Styles */
         header {
             background-color: #00558c;
             color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
+
         .top-bar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.5rem 1rem;
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
         }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0;
+        }
+
         .student-details p {
             margin: 0;
         }
-        /* Navigation Styles */
-        nav {
-            background-color: #004070;
-        }
+
+        /* Navigation Bar */
         nav ul {
             display: flex;
             list-style: none;
+            padding: 0;
             margin: 0;
-            padding: 0.5rem 1rem;
         }
+
         nav ul li {
-            margin-right: 1.5rem;
+            margin-left: 1.5rem;
         }
+
         nav ul li a {
             color: white;
+            text-decoration: none;
             font-weight: bold;
-            padding: 0.5rem 0;
+            transition: color 0.3s ease;
         }
+
         nav ul li a:hover {
-            border-bottom: 2px solid #ff5722;
+            color: #ffcc00;
         }
+
         /* Hero Section */
         .hero {
-            background-image: url('JPG.jpg');
+            background-image: url('hero-image.jpg');
             background-size: cover;
             background-position: center;
+            height: 80vh;
             color: white;
             text-align: center;
-            padding: 4rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 0 1rem;
         }
+
         .hero h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
+            margin: 0;
+            animation: fadeIn 2s;
         }
+
         .hero p {
             font-size: 1.2rem;
+            margin-top: 1rem;
+            animation: fadeIn 2.5s;
+        }
+
+        .cta-button {
+            background-color: #ffcc00;
+            color: #00558c;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 2rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #ffb300;
+            transform: scale(1.05);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 3rem 0;
+        }
+
+        section h3 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #00558c;
             margin-bottom: 2rem;
         }
-        .hero .cta-button {
-            background-color: #ff5722;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            font-weight: bold;
+
+        section p {
+            text-align: center;
+            font-size: 1.2rem;
+            width: 80%;
+            margin: auto;
+            color: #555;
         }
-        .hero .cta-button:hover {
-            background-color: #e64a19;
-        }
-        /* Main Content Styles */
+
         .container {
             width: 90%;
             max-width: 1200px;
             margin: auto;
-            overflow: hidden;
-            padding: 2rem 0;
-        }
-        section {
-            padding: 2rem 0;
-        }
-        section h3 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            color: #00558c;
-        }
-        /* Benefit Summary */
-        .benefit-summary ul {
-            list-style-type: none;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            padding: 0;
+            justify-content: space-between;
         }
-        .benefit-summary li {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: 45%;
-            margin: 1%;
-            padding: 1rem;
-            box-sizing: border-box;
-        }
-        .benefit-summary li h4 {
-            margin-bottom: 0.5rem;
-        }
-        /* Features & Benefits */
-        .features, .benefits {
-            background-color: #f9f9f9;
-        }
-        .features .feature-item, .benefits .benefit-item {
+
+        /* Benefits Section */
+        .benefit-item {
+            background-color: white;
+            width: 48%;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            padding: 2rem;
             display: flex;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .benefit-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 1.5rem;
+            border-radius: 50%;
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .benefit-item h4 {
+            font-size: 1.5rem;
+            color: #00558c;
+        }
+
+        .benefit-item p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background-color: #f4f4f4;
+        }
+
+        .testimonial {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
             margin-bottom: 2rem;
         }
-        .features .feature-item img, .benefits .benefit-item img {
-            width: 40%;
-            margin-right: 2rem;
-            border-radius: 5px;
+
+        .testimonial p {
+            font-size: 1.1rem;
+            color: #555;
         }
-        .features .feature-item div, .benefits .benefit-item div {
-            flex: 1;
+
+        .testimonial strong {
+            display: block;
+            margin-top: 1rem;
+            color: #333;
         }
-        /* Testimonials */
-        .testimonials {
-            background-color: #fff;
-        }
-        .testimonials .testimonial {
-            border-bottom: 1px solid #ddd;
-            padding: 1rem 0;
-        }
-        .testimonials .testimonial:last-child {
-            border-bottom: none;
-        }
-        /* FAQ */
+
+        /* FAQ Accordion */
         .faq-item h4 {
             cursor: pointer;
             position: relative;
             padding-right: 1.5rem;
         }
+
         .faq-item h4::after {
             content: '+';
             position: absolute;
             right: 0;
             top: 0;
+            transition: transform 0.3s ease;
         }
+
+        .faq-item.open h4::after {
+            transform: rotate(45deg);
+        }
+
         .faq-item p {
             display: none;
             margin-top: 0.5rem;
+            font-size: 1rem;
+            color: #555;
         }
+
+        .faq-item.open p {
+            display: block;
+        }
+
         /* Social Proof */
-        .social-proof {
-            background-color: #f9f9f9;
-            text-align: center;
+        .social-media {
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
         }
-        .social-proof .social-media a {
-            display: inline-block;
-            margin: 0 0.5rem;
+
+        .social-media a {
             font-size: 2rem;
+            margin: 0 0.5rem;
             color: #00558c;
+            transition: color 0.3s ease;
         }
-        .social-proof .social-media a:hover {
-            color: #ff5722;
+
+        .social-media a:hover {
+            color: #ffcc00;
         }
-        /* Footer Styles */
+
+        /* Footer Section */
         footer {
             background-color: #00558c;
             color: white;
             text-align: center;
-            padding: 1rem 0;
+            padding: 2rem 0;
         }
+
+        footer p {
+            margin: 0;
+        }
+
         footer a {
             color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
-        /* Responsive Styles */
+
+        footer a:hover {
+            color: #ffcc00;
+        }
+
+        /* Media Queries */
         @media (max-width: 768px) {
-            nav ul {
-                flex-direction: column;
-            }
-            .features .feature-item, .benefits .benefit-item {
-                flex-direction: column;
-            }
-            .features .feature-item img, .benefits .benefit-item img {
+            .benefit-item, .testimonial {
                 width: 100%;
-                margin-bottom: 1rem;
             }
-            .benefit-summary li {
-                width: 100%;
-                margin: 0.5rem 0;
+
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
             }
         }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
     </style>
-    <!-- Font Awesome CDN for social media icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <!-- JavaScript for FAQ Accordion -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const faqHeaders = document.querySelectorAll('.faq-item h4');
-            faqHeaders.forEach(header => {
-                header.addEventListener('click', function() {
-                    const content = this.nextElementSibling;
-                    if (content.style.display === 'block') {
-                        content.style.display = 'none';
-                        this.querySelector('::after').content = '+';
-                    } else {
-                        content.style.display = 'block';
-                        this.querySelector('::after').content = '-';
-                    }
-                });
-            });
-        });
-    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
+
     <!-- Header Section -->
     <header>
         <div class="top-bar">
-            <div class="header-left">
-                <h1>DeakinMates</h1>
-            </div>
-            <div class="header-right student-details">
+            <h1>DeakinMates</h1>
+            <div class="student-details">
                 <p>Ashish (s224637578)</p>
                 <p><a href="mailto:s224637578@deakin.edu.au">s224637578@deakin.edu.au</a></p>
             </div>
         </div>
-        <!-- Navigation Bar -->
         <nav>
             <ul>
                 <li><a href="#hero">Home</a></li>
@@ -255,58 +319,51 @@
         <a href="#" class="cta-button">Download DeakinMates Now</a>
     </section>
 
-    <!-- Benefit Summary Section -->
-    <section class="benefit-summary" id="benefit-summary">
-        <div class="container">
-            <h3>Unlock the Full Potential of Your University Life</h3>
-            <ul>
-                <li>
-                    <h4>Connect with Peers</h4>
-                    <p>Meet like-minded students across all campuses.</p>
-                </li>
-                <li>
-                    <h4>Stay Informed</h4>
-                    <p>Never miss out on events and workshops.</p>
-                </li>
-                <li>
-                    <h4>Easy Navigation</h4>
-                    <p>Find your way around campus effortlessly.</p>
-                </li>
-                <li>
-                    <h4>Student Marketplace</h4>
-                    <p>Buy and sell items within the community.</p>
-                </li>
-            </ul>
-            <a href="#" class="cta-button">Get Started Today</a>
-        </div>
-    </section>
-
     <!-- Benefits Section -->
     <section class="benefits" id="benefits">
+        <h3>Why Choose DeakinMates?</h3>
+        <p>DeakinMates is designed to make your university experience smoother and more enjoyable by offering a wide range of features tailored to your academic and social needs.</p>
         <div class="container">
-            <h3>Why Choose DeakinMates?</h3>
             <div class="benefit-item">
+                <img src="networking.jpg" alt="Networking">
                 <div>
-                    <h4>💬 Seamless Student Networking</h4>
-                    <p>Create your profile, showcase your interests, and connect with like-minded peers across all Deakin campuses.</p>
+                    <h4>💬 Connect with Peers</h4>
+                    <p>Easily find and network with like-minded students across all Deakin campuses through personalized profiles and interest-based matches.</p>
                 </div>
             </div>
             <div class="benefit-item">
+                <img src="events.jpg" alt="Events">
                 <div>
-                    <h4>🎉 Never Miss a Beat</h4>
-                    <p>Stay updated on campus events, workshops, and social gatherings. RSVP and add events to your calendar with just a tap.</p>
+                    <h4>🎉 Stay Updated on Events</h4>
+                    <p>Never miss out on important campus events, workshops, and social gatherings. Get real-time updates and RSVP to events with a single tap.</p>
                 </div>
             </div>
             <div class="benefit-item">
+                <img src="navigation.jpg" alt="Navigation">
                 <div>
-                    <h4>🗺️ Smart Campus Navigation</h4>
-                    <p>Navigate Deakin campuses and Melbourne city with ease. Save favorite locations and find the quickest routes to your classes.</p>
+                    <h4>🗺️ Navigate Campuses with Ease</h4>
+                    <p>Access smart navigation tools that help you explore Deakin campuses and the surrounding city.</p>
                 </div>
             </div>
             <div class="benefit-item">
+                <img src="marketplace.jpg" alt="Marketplace">
                 <div>
-                    <h4>🛒 Trusted Marketplace</h4>
-                    <p>Buy, sell, or donate items within the verified Deakin community. Find textbooks, furniture, and more from fellow students.</p>
+                    <h4>🛒 Access a Trusted Marketplace</h4>
+                    <p>Buy, sell, or donate items within the Deakin community through a secure platform.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <img src="study-group.jpg" alt="Study Groups">
+                <div>
+                    <h4>👥 Join Study Groups</h4>
+                    <p>Create or join study groups for your courses and collaborate on projects.</p>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <img src="events-recommendation.jpg" alt="Event Recommendations">
+                <div>
+                    <h4>🌟 Get Personalized Event Recommendations</h4>
+                    <p>Receive event suggestions based on your interests and academic program.</p>
                 </div>
             </div>
         </div>
@@ -314,73 +371,63 @@
 
     <!-- Features Section -->
     <section class="features" id="features">
+        <h3>Key Features</h3>
         <div class="container">
-            <h3>Key Features</h3>
             <div class="feature-item">
-                <div>
-                    <h4><b>Deakin Authentication</b></h4>
-                    <p>Enjoy a safe and exclusive environment with our Deakin student verification system.</p>
-                </div>
+                <h4>🔐 Secure Deakin Authentication</h4>
+                <p>Enjoy a safe and exclusive environment with our Deakin student verification system.</p>
             </div>
             <div class="feature-item">
-                <div>
-                    <h4><b>Study Group Formation</b></h4>
-                    <p>Create or join study groups for your courses, collaborate on projects, and share resources.</p>
-                </div>
+                <h4>👥 Study Group Formation</h4>
+                <p>Create or join study groups for your courses, collaborate on projects, and share resources.</p>
             </div>
             <div class="feature-item">
-                <div>
-                    <h4><b>Academic Integration</b> </h4>
-                    <p>Access your class timetables and receive personalized course recommendations based on your interests.</p>
-                </div>
+                <h4>📚 Academic Integration</h4>
+                <p>Access your class timetables and receive personalized course recommendations based on your interests.</p>
             </div>
             <div class="feature-item">
-                <div>
-                    <h4><b>Personalized Event Recommendations</b></h4>
-                    <p>Discover events and activities tailored to your interests and academic program.</p>
-                </div>
+                <h4>🌟 Personalized Event Recommendations</h4>
+                <p>Discover events and activities tailored to your interests and academic program.</p>
             </div>
         </div>
     </section>
 
     <!-- Social Proof Section -->
     <section class="social-proof" id="social-proof">
-        <div class="container">
-            <h3>Join Our Community</h3>
-            <p>Follow us on social media and be part of the DeakinMates community.</p>
-            <div class="social-media">
-                <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-youtube-square"></i></a>
-            </div>
+        <h3>Join Our Community</h3>
+        <p>Follow us on social media and be part of the DeakinMates community.</p>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter-square"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-youtube-square"></i></a>
         </div>
     </section>
 
     <!-- Testimonials Section -->
     <section class="testimonials" id="testimonials">
+        <h3>What Students Are Saying</h3>
         <div class="container">
-            <h3>What Students Are Saying</h3>
             <div class="testimonial">
                 <p>"DeakinMates has completely changed how I experience university. I've made great friends and never miss out on campus events!"</p>
-                <p><strong>- Ashish., Business Student</strong></p>
+                <strong>- Sarah T., Business Student</strong>
             </div>
             <div class="testimonial">
                 <p>"The study group feature is a game-changer. It's so easy to connect with classmates and collaborate on assignments."</p>
-                <p><strong>- Nishiki, Engineering Student</strong></p>
+                <strong>- Michael L., Engineering Student</strong>
             </div>
             <div class="testimonial">
                 <p>"The marketplace helped me find affordable textbooks and furniture. It's a must-have app for every Deakin student!"</p>
-                <p><strong>- Elvia, Arts Student</strong></p>
+                <strong>- Emily R., Arts Student</strong>
             </div>
         </div>
     </section>
 
     <!-- FAQ Section -->
     <section class="faq" id="faq">
+        <h3>Frequently Asked Questions</h3>
         <div class="container">
-            <h3>Frequently Asked Questions</h3>
             <div class="faq-item">
                 <h4>Is DeakinMates free to use?</h4>
                 <p>Yes, DeakinMates is completely free for all verified Deakin University students.</p>
@@ -410,13 +457,24 @@
         <div class="container">
             <p>&copy; 2024 DeakinMates. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             <div class="social-media">
-                <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-youtube-square"></i></a>
+                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter-square"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-youtube-square"></i></a>
             </div>
         </div>
     </footer>
+
+    <script>
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-item h4').forEach(header => {
+            header.addEventListener('click', function() {
+                const parent = this.parentElement;
+                parent.classList.toggle('open');
+            });
+        });
+    </script>
+
 </body>
 </html>
